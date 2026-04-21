@@ -6,8 +6,8 @@ import numpy as np
 # Page config
 st.set_page_config(
     page_title="March Madness",
-    page_icon=" ",
-    layouts="wide",
+    page_icon="🏀",
+    layout="wide",
 )
 
 
