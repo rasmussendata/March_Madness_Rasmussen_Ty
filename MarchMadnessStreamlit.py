@@ -43,7 +43,11 @@ if team != "All":
     filtered_df = filtered_df[filtered_df["team_name"] == team]
 
 
-
+st.scatter_chart(
+    filtered_df,
+    x="adjusted_offensive_efficiency",
+    y="adjusted_defensive_efficiency"
+)
 
 
 team_selected = st.selectbox("Select Team for Breakdown", filtered_df["team_name"].unique())
@@ -56,31 +60,24 @@ st.write(team_data)
 
 
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 
-ax.scatter(
-    filtered_df["adjusted_offensive_efficiency"],
-    filtered_df["adjusted_defensive_efficiency"]
-)
+#ax.scatter(
+ #   filtered_df["adjusted_offensive_efficiency"],
+  #  filtered_df["adjusted_defensive_efficiency"]
+#)
 
 # Label teams
-for i, row in filtered_df.iterrows():
-    ax.text(row["adjusted_offensive_efficiency"], row["adjusted_defensive_efficiency"], row["team_name"])
+#for i, row in filtered_df.iterrows():
+ #   ax.text(row["adjusted_offensive_efficiency"], row["adjusted_defensive_efficiency"], row["team_name"])
 
-ax.set_xlabel("Adjusted Offensive Efficiency")
-ax.set_ylabel("Adjusted Defensive Efficiency")
-ax.set_title("Team Performance: Offense vs Defense")
+#ax.set_xlabel("Adjusted Offensive Efficiency")
+#ax.set_ylabel("Adjusted Defensive Efficiency")
+#ax.set_title("Team Performance: Offense vs Defense")
 
-st.pyplot(fig)
-
-
+#st.pyplot(fig)
 
 
 
-#st.scatter_chart(
-   # filtered_df,
-  #  x="adjusted_offensive_efficiency",
- #   y="adjusted_defensive_efficiency"
-#)
