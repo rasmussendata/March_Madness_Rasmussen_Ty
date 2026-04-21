@@ -45,24 +45,11 @@ if team != "All":
 
 
 
-import matplotlib.pyplot as plt
-
-fig, ax = plt.subplots()
-
-ax.scatter(
-    filtered_df["adjusted_offensive_efficiency"],
-    filtered_df["adjusted_defensive_efficiency"]
+st.scatter_chart(
+    filtered_df,
+    x="adjusted_offensive_efficiency",
+    y="adjusted_defensive_efficiency"
 )
-
-# Label teams
-for i, row in filtered_df.iterrows():
-    ax.text(row["adjusted_offensive_efficiency"], row["adjusted_defensive_efficiency"], row["team_name"])
-
-ax.set_xlabel("Adjusted Offensive Efficiency")
-ax.set_ylabel("Adjusted Defensive Efficiency")
-ax.set_title("Team Performance: Offense vs Defense")
-
-st.pyplot(fig)
 
 
 
